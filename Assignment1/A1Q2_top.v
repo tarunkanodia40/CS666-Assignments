@@ -1,5 +1,3 @@
-`include "A1Q2_D_FF.v"
-`include "A1Q2_LFSR.v"
 module lfsr_top;
 
     reg [15:0] seed;

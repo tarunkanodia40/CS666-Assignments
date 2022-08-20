@@ -10,14 +10,21 @@ module lfsr_top;
 
     initial
     begin
-        $monitor("<%d>: Seed = %b, State = %b, Reset = %d\n", $time, seed, state, reset);
+        $monitor("<%6d>: Seed = %b, State = %b, Reset = %1d\n", $time, seed, state, reset);
     end
 
     initial
     begin
+        #50
+        reset = 1;
+        #50
+        reset = 0;
+    end
+    initial
+    begin
     	clk = 0;
-    	reset=0;
-    	seed=13;
+    	reset = 0;
+    	seed = 13;
     	forever begin
     		#1
     		clk = ~clk;

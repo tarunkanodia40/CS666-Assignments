@@ -1,3 +1,4 @@
+// Assumption: "b" will always be prime, as mentioned in the question. Otherwise modinv doesn't exist.
 module modinv_top;
     reg clk,reset;
     reg [31:0] number;
@@ -10,14 +11,9 @@ module modinv_top;
 
     initial
     begin
-        $monitor("<%2d>: Number = %4d, Prime = %4d, GCD = %4d, Modulo-Inverse = %4d", $time, number, prime, gcd, inverse);
-    end
-
-    initial
-    begin
         reset = 0;
         forever begin
-            #5
+            #1
             clk = ~clk;
         end
     end
@@ -28,14 +24,50 @@ module modinv_top;
         clk = 0;
         number = 10;
         prime = 53;
-        #1 reset=0;
-        #50
+        #2 reset=0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+
+        #20
         reset = 1;
         clk = 0;
         number = 200;
         prime = 67;
-        #1 reset=0;
-        #200
+        #2 reset=0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+
+        #20
+        reset = 1;
+        clk = 0;
+        number = 999;
+        prime = 5339;
+        #2 reset = 0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+
+        #20
+        reset = 1;
+        clk = 0;
+        number = 4536;
+        prime = 113;
+        #2 reset = 0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+
+        #20
+        reset = 1;
+        clk = 0;
+        number = 993;
+        prime = 1000000007;
+        #2 reset = 0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+
+        #20
+        reset = 1;
+        clk = 0;
+        number = 123456789;
+        prime = 7;
+        #2 reset = 0;
+        #20 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        
+        #2000
         $finish;
     end
 

@@ -25,65 +25,65 @@ module modinv_top;
         number = 10;
         prime = 53;
         #2 reset=0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
 
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 200;
         prime = 67;
         #2 reset=0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
 
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 999;
         prime = 5339;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
 
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 4536;
         prime = 113;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
 
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 993;
         prime = 1000000007;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
 
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 123456789;
         prime = 7;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
         
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 3156464;
         prime = 9679;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
         
-        #20
+        #10
         reset = 1;
         clk = 0;
         number = 12235;
         prime = 2731;
         #2 reset = 0;
-        #30 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
+        #100 $display("<%4d> Number = %4d, Prime = %4d, Inverse = %4d", $time, number, prime, inverse);
         
-        #2000
+        #10
         $finish;
     end
 

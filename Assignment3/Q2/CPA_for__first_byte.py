@@ -48,13 +48,14 @@ corr_matrix = np.empty([256, 1998])
 for j in range(0, 8939):
     for k in range(0, 256):
         # x=int(ciphertexts[j][slice(2,4)],16)
+        # here we get correlation peak when K_1 right in HD(C_13,  InvSbox[C_1 ^ K_1])
         x = ciphertexts[j][slice(2, 4)]
         x8 = int(x, 16) ^ k
         # print(x8,"\n")
-        # Here we are not considereing InvSR because we are getting 1st byte
         cipher9[j][k] = InvSbox[x8]
         # x1=ciphertexts[j][slice(0,2)]
-        x2 = int(x, 16)
+        # x2 = int(x, 16)
+        x2 = int(ciphertexts[j][slice(26, 28)],16)
         xor1 = x2 ^ int(cipher9[j][k])
         hamming_dist = number_of_ones(xor1)
         hypothetical_model[j][k] = hamming_dist

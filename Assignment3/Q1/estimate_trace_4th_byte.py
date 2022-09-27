@@ -45,7 +45,7 @@ for kb in range(256):
             for row in csv_reader:
                 ct = int(float(row[1]))
                 # 4th byte
-                ct_temp=(ct>>96)&255
+                ct_temp=(ct>>88)&255
                 state_9th=InvSbox[ct_temp^kb]
                 binexp = '{0:08b}'.format(state_9th)
             

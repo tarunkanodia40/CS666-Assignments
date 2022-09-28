@@ -6,7 +6,6 @@ import pandas as pd
 import numpy as np
 df = pd.read_csv(r'AES_Power_Trace.csv', header=None)
 df1 = df.to_numpy()
-print(df1)
 
 traces = df1[0:, 2:2000]
 # Getting the plaintext part
@@ -32,8 +31,6 @@ InvSbox = (
     0x17, 0x2B, 0x04, 0x7E, 0xBA, 0x77, 0xD6, 0x26, 0xE1, 0x69, 0x14, 0x63, 0x55, 0x21, 0x0C, 0x7D,
 )
 cipher9 = np.empty([8939, 256])
-# For Hamming weight
-
 
 def number_of_ones(n):
     c = 0
@@ -41,7 +38,6 @@ def number_of_ones(n):
         c += n % 2
         n /= 2
     return c
-
 
 hypothetical_model = np.empty([8939, 256])
 corr_matrix = np.empty([256, 1998])
@@ -79,4 +75,6 @@ for i in range(256):
         plt.plot(range(1998), corr_matrix[i, :], 'r', linewidth=5)
     else:
         plt.plot(range(1998), corr_matrix[i, :], 'k', linewidth=2)
+plt.title('CPA plot')
+plt.savefig("Figure.png",dpi=1200,bbox_inches='tight')
 plt.show()

@@ -76,5 +76,5 @@ for i in range(256):
     else:
         plt.plot(range(1998), corr_matrix[i, :], 'k', linewidth=2)
 plt.title('CPA plot')
-plt.savefig("Figure.png",dpi=1200,bbox_inches='tight')
+plt.savefig("Figure_1.png",dpi=1200,bbox_inches='tight')
 plt.show()
